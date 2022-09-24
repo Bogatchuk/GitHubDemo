@@ -30,14 +30,14 @@
                                             <constraint firstAttribute="width" secondItem="Njq-SW-UPx" secondAttribute="height" multiplier="1:1" id="U9F-dO-C10"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-vs-qQt">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-vs-qQt">
                                         <rect key="frame" x="0.0" y="108" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ixW-vs-qQt" secondAttribute="height" multiplier="1:1" id="hmF-oo-roD"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G19-9u-cQn">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G19-9u-cQn">
                                         <rect key="frame" x="0.0" y="216" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -56,6 +56,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="switchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWz-ax-yct"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,6 +78,13 @@
                             <constraint firstItem="XXf-5R-nRo" firstAttribute="leading" secondItem="3yg-aI-GeW" secondAttribute="leading" constant="-10" id="xJk-zF-o6n"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroungLightView" destination="XXf-5R-nRo" id="WHq-dg-RUt"/>
+                        <outlet property="switchButton" destination="afn-Ub-7Eg" id="4lV-Eb-F2a"/>
+                        <outletCollection property="lightViews" destination="Njq-SW-UPx" collectionClass="NSMutableArray" id="Xbq-z2-w8f"/>
+                        <outletCollection property="lightViews" destination="ixW-vs-qQt" collectionClass="NSMutableArray" id="SaM-7G-EfM"/>
+                        <outletCollection property="lightViews" destination="G19-9u-cQn" collectionClass="NSMutableArray" id="c15-YQ-I1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
