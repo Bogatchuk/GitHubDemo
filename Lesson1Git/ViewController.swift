@@ -13,16 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet var lightViews: [UIView]!
     @IBOutlet weak var switchButton: UIButton!
     
-    var index = 0
+    private var index = 0
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroungLightView.layer.cornerRadius = 10
         switchButton.layer.cornerRadius = 10
         
+    }
+    
+    override func viewWillLayoutSubviews() {
         for view in lightViews {
             view.layer.cornerRadius = 30
-            view.alpha = 0.5
+            view.alpha = lightIsOff
         }
     }
 
@@ -30,9 +35,9 @@ class ViewController: UIViewController {
         
         switchButton.setTitle("NEXT", for: .normal)
         for view in lightViews {
-            view.alpha = 0.5
+            view.alpha = lightIsOff
         }
-        lightViews[index].alpha = 1
+        lightViews[index].alpha = lightIsOn
         
         if index >= 2 {
             index = 0
@@ -41,6 +46,5 @@ class ViewController: UIViewController {
         }
         
     }
-    
 }
 
